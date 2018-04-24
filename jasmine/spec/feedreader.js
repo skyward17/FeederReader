@@ -30,14 +30,14 @@ $(function() {
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
-         */
+        // */
          // Using a forEach Loop, check URL is defined and not empty.
          it('URL is defined and is NOT empty', function() {
-             allFeeds.forEach(function(feed) {
-                 expect(feed.url).toBeDefined();
-                 expect(feed.url.length).not.toBe(0);
+                 for(const i in allFeeds) {
+                 expect(allFeeds[i].url).toBeDefined();
+                 expect(allFeeds[i].url.length).not.toBe(0);
+               };
          });
-       });
 
 
         /* TODO: Write a test that loops through each feed
@@ -46,10 +46,9 @@ $(function() {
          */
          // Using a forEach Loop, check NAME is defined and not empty.
          it('NAME is defined and is NOT empty', function() {
-                 for(let i in allFeeds) {
-                 expect(allFeeds).toBeDefined();
-                 expect(allFeeds.length).not.toBe(0);
-                 console.log(test);
+                 for(const i in allFeeds) {
+                 expect(allFeeds[i].name).toBeDefined();
+                 expect(allFeeds[i].name.length).not.toBe(0);
                };
          });
     });
