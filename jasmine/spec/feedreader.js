@@ -61,13 +61,18 @@ describe('The MENU', function() {
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
-
+         it('should be hidden', function() {
+           let hiddenEl = fixture.find('.menu-hidden');
+           expect(hiddenEl.css('transition')).toEqual('transform 0.2s');
+         });
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
 }); // describe 'The MENU'
+
+
     /* TODO: Write a new test suite named "Initial Entries" */
 
         /* TODO: Write a test that ensures when the loadFeed
