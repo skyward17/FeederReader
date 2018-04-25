@@ -62,14 +62,18 @@ describe('The MENU', function() {
          * hiding/showing of the menu element.
          */
          it('should be hidden', function() {
-           let hiddenEl = fixture.find('.menu-hidden');
-           expect(hiddenEl.css('transition')).toEqual('transform 0.2s');
+           let hiddenEl = $('body').addClass('menu-hidden');
+           expect(hiddenEl.menu-hidden('.transition')).toEqual(true);
          });
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+          it('should display onClick and should hide onClick', function() {
+          let successButton = fixture.find('.btn-success');
+          expect(successButton.css('border-color')).toEqual('');
+          });
 }); // describe 'The MENU'
 
 
