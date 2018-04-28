@@ -51,30 +51,32 @@ $(function() {
                  expect(allFeeds[i].name.length).not.toBe(0);
                };
          });
-});  // describe 'RSS Feeds'
+});  // End describe 'RSS Feeds'
 
 
     /* TODO: Write a new test suite named "The menu" */
 describe('The MENU', function() {
+    let getEl = document.getElementsByClassName('menu-hidden');  // Var to store class
+    let getDm = document.getElementById('body');  // Var to store element
         /* TODO: Write a test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
          * the CSS to determine how we're performing the
          * hiding/showing of the menu element.
          */
          it('should be hidden', function() {
-           let hiddenEl = $('body').addClass('menu-hidden');
-           expect(hiddenEl.menu-hidden('.transition')).toEqual(true);
+           expect(getDm).hasClass(getEl).toEqual(true);  //get body then see if it has class for hidden condition
          });
          /* TODO: Write a test that ensures the menu changes
           * visibility when the menu icon is clicked. This test
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
+          /*
           it('should display onClick and should hide onClick', function() {
-          let successButton = fixture.find('.btn-success');
-          expect(successButton.css('border-color')).toEqual('');
+          expect(getDm).hasClass(getEl).toEqual(true);
           });
-}); // describe 'The MENU'
+          */
+}); // End describe 'The MENU'
 
 
     /* TODO: Write a new test suite named "Initial Entries" */
