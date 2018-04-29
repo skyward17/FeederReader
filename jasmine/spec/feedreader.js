@@ -56,8 +56,6 @@ $(function() {
 
     /* TODO: Write a new test suite named "The menu" */
 describe('The MENU', function() {
-    let getEl = document.getElementsByClassName('menu-hidden');  // Var to store class
-    let getDm = document.getElementsByTagName('body');  // Var to store element
         /* TODO: Write a test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
          * the CSS to determine how we're performing the
@@ -71,13 +69,17 @@ describe('The MENU', function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
-          /*
-          it('should display onClick and should hide onClick', function() {
-          expect(getDm).hasClass(getEl).toEqual(true);
+          it('should display on Click and should hide on Click', function() {
+          let getMenu = $('menu-icon-link');  //  get the menu for onClick chanes
+          getMenu.click();
+          expect($('body').hasClass('menu-hidden')).toBe(true);  //get body(jQuery) then see if it has class for menu-hidden condition
+          console.log(getMenu);
+
+          getMenu.click();
+          expect($('body').hasClass('menu-hidden')).toBe(false);
           });
-          */
-          console.log(getDm[0]);
-          console.log(getEl);
+
+
 }); // End describe 'The MENU'
 
 
