@@ -77,8 +77,7 @@ describe('The MENU', function() {
 
           getMenu.trigger('click');
               expect($('body').hasClass('menu-hidden')).toBe(true);
-        });
-
+          });
 
 }); // End describe 'The MENU'
 
