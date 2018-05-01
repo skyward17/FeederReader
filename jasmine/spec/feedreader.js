@@ -91,14 +91,15 @@ describe('Initial Entries', function() {
       * the use of Jasmine's beforeEach and asynchronous done() function.
       */
     beforeEach(function(done) {  // https://jasmine.github.io/tutorials/your_first_suite
-      loadFeed();
-      console.log('TEST loadFeed');  //TEST 
-      it('When loadFeed() completes there is at least 1 entry el in the feed container', function(){
-      expect($('.entry').length).not.toBe(0);
+      loadFeed(0, done);
+    });
+      console.log('TEST loadFeed');  //TEST
+      it('When loadFeed() completes there is at least 1 entry element in the feed container', function() {
+          expect($('.entry').length).not.toBe(0);
 
     });  // it
     done();
-  });  // beforeEach
+  //});  // beforeEach
 });  // End describe 'Initial Entries'
 
 
