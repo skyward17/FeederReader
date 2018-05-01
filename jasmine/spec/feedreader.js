@@ -84,6 +84,7 @@ describe('The MENU', function() {
 
     /* TODO: Write a new test suite named "Initial Entries" */
 describe('Initial Entries', function() {
+
       /* TODO: Write a test that ensures when the loadFeed
       * function is called and completes its work, there is at least
       * a single .entry element within the .feed container.
@@ -93,11 +94,10 @@ describe('Initial Entries', function() {
     beforeEach(function(done) {  // https://jasmine.github.io/tutorials/your_first_suite
       loadFeed(0, done);
     });  // beforeEach
-      console.log('TEST loadFeed');  //TEST
       it('When loadFeed() completes there is at least 1 entry element in the feed container', function() {
           expect($('.entry').length).not.toBe(0);
 
-    });  // it
+      });  // it
 });  // End describe 'Initial Entries'
 
 
@@ -108,5 +108,13 @@ describe('New Feed Selection', function() {
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
+    let previousFeed = $('.entry').html();  // Get entry
+        console.log(previousFeed);  // For Testing
+        it('Check if loadFeed() takes in new content', function() {
+        expect(previousFeed).not.toBe($('.entry').html());
+        });
+
+
 });  // End describe 'New Feed Selection'
+
 }());
