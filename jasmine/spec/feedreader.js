@@ -92,14 +92,12 @@ describe('Initial Entries', function() {
       */
     beforeEach(function(done) {  // https://jasmine.github.io/tutorials/your_first_suite
       loadFeed(0, done);
-    });
+    });  // beforeEach
       console.log('TEST loadFeed');  //TEST
       it('When loadFeed() completes there is at least 1 entry element in the feed container', function() {
           expect($('.entry').length).not.toBe(0);
 
     });  // it
-    done();
-  //});  // beforeEach
 });  // End describe 'Initial Entries'
 
 
