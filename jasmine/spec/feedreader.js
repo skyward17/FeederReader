@@ -69,15 +69,15 @@ describe('The MENU', function() {
           * should have two expectations: does the menu display when
           * clicked and does it hide when clicked again.
           */
-          it('should display on Click and should hide on Click', function() {
-          let getMenu = $('menu-icon-link');  //  get the menu for onClick chanes
-          getMenu.click();
-          expect($('body').hasClass('menu-hidden')).toBe(true);  //get body(jQuery) then see if it has class for menu-hidden condition
-          console.log(getMenu);
 
-          getMenu.click();
-          expect($('body').hasClass('menu-hidden')).toBe(false);
-          });
+          it('should display on Click and should hide on Click', function() {
+          let getMenu = $('.menu-icon-link');  //  get the menu for on Click chanes
+          getMenu.trigger('click');
+              expect($('body').hasClass('menu-hidden')).toBe(false);  //get body(jQuery) then see if it has class for menu-hidden condition
+
+          getMenu.trigger('click');
+              expect($('body').hasClass('menu-hidden')).toBe(true);
+        });
 
 
 }); // End describe 'The MENU'
