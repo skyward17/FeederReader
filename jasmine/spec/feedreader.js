@@ -26,19 +26,17 @@ $(function() {
             expect(allFeeds.length).not.toBe(0);
         });
 
-
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a URL defined
          * and that the URL is not empty.
-        // */
+        */
          // Using a forEach Loop, check URL is defined and not empty.
          it('URL is defined and is NOT empty', function() {
-                 for(const i in allFeeds) {
+             for(const i in allFeeds) {
                  expect(allFeeds[i].url).toBeDefined();
                  expect(allFeeds[i].url.length).not.toBe(0);
-               };
-         });
-
+             };
+         });  // it
 
         /* TODO: Write a test that loops through each feed
          * in the allFeeds object and ensures it has a name defined
@@ -46,15 +44,15 @@ $(function() {
          */
          // Using a forEach Loop, check NAME is defined and not empty.
          it('NAME is defined and is NOT empty', function() {
-                 for(const i in allFeeds) {
+             for(const i in allFeeds) {
                  expect(allFeeds[i].name).toBeDefined();
                  expect(allFeeds[i].name.length).not.toBe(0);
-               };
+              };
          });
 });  // End describe 'RSS Feeds'
 
 
-    /* TODO: Write a new test suite named "The menu" */
+/* TODO: Write a new test suite named "The menu" */
 describe('The MENU', function() {
         /* TODO: Write a test that ensures the menu element is
          * hidden by default. You'll have to analyze the HTML and
@@ -82,7 +80,7 @@ describe('The MENU', function() {
 }); // End describe 'The MENU'
 
 
-    /* TODO: Write a new test suite named "Initial Entries" */
+/* TODO: Write a new test suite named "Initial Entries" */
 describe('Initial Entries', function() {
 
       /* TODO: Write a test that ensures when the loadFeed
@@ -101,19 +99,20 @@ describe('Initial Entries', function() {
 });  // End describe 'Initial Entries'
 
 
-    /* TODO: Write a new test suite named "New Feed Selection" */
+/* TODO: Write a new test suite named "New Feed Selection" */
 describe('New Feed Selection', function() {
 
         /* TODO: Write a test that ensures when a new feed is loaded
          * by the loadFeed function that the content actually changes.
          * Remember, loadFeed() is asynchronous.
          */
-    let previousFeed = $('.entry').html();  // Get entry
-        console.log(previousFeed);  // For Testing
+    beforeEach(function(done) {  // https://jasmine.github.io/tutorials/your_first_suite
+        loadFeed(0, done);
+        });  // beforeEach
+    let previousFeed = $('.entry').text();  // Get entry
         it('Check if loadFeed() takes in new content', function() {
-        expect(previousFeed).not.toBe($('.entry').html());
+        expect(previousFeed).not.toBe($('.entry').text());
         });
-
 
 });  // End describe 'New Feed Selection'
 
